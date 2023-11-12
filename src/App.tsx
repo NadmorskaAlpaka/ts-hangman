@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import Hangman from "./components/Hangman";
+import SecretWord from "./components/SecretWord";
+import Keyboard from "./components/Keyboard";
 
 function App() {
 
@@ -19,6 +21,8 @@ function App() {
     <div className="container">
       {secretWord}
       <Hangman />
+      <SecretWord />
+      <Keyboard />
     </div>
   )
 }

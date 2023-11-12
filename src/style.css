@@ -10,6 +10,7 @@
 
 .container{
     margin: 0 auto;
+    gap: 1rem;
     max-width: 800px;
     width: 100%;
     display: flex;
@@ -116,4 +117,61 @@
 .hangman-leg-left{
     right: 37%;
     transform: rotate(-135deg);
+}
+
+.secret-word__box{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.750rem;
+}
+
+.letter{
+    text-transform: uppercase;
+    font-size: 1.875rem;
+    font-weight: 600;
+    font-family: Arial;
+    padding-bottom: 0.125rem;
+    border-bottom: 0.250rem solid var(--black);
+}
+
+.letter-visible{
+    visibility: visible;
+}
+
+.letter-invisible{
+    visibility: hidden;
+}
+
+.keyboard{
+    padding: 0 0.5rem;
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(auto-fit ,minmax(70px, 1fr));
+    gap: 0.5rem;
+}
+
+.key{
+    text-transform: uppercase;
+    font-size: 2rem;
+    font-weight: 600;
+    border: 2px solid var(--black);
+    background-color: transparent;
+    aspect-ratio: 1/1;
+    cursor: pointer;
+    transition: all 300ms ease;
+}
+
+.key:hover:not(:disabled),
+.key:focus:not(:disabled){
+    background-color: rgb(204, 167, 253);
+}
+
+.key:active{
+    background-color: rgb(116, 10, 255);
+    color: #ffffff;
+}
+
+.inactive{
+    opacity: 0.4;
 }
