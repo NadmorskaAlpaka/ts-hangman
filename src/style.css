@@ -4,6 +4,10 @@
     padding: 0;
 }
 
+:root{
+    --black: #000000;
+}
+
 .container{
     margin: 0 auto;
     max-width: 800px;
@@ -14,3 +18,102 @@
     justify-content: center;
 }
 
+.hangman{
+    width: 400px;
+    position: relative;
+}
+
+.hangman * {
+    background-color: var(--black);
+}
+
+.hangman-floor{
+    width: 200px;
+    height: 10px;
+}
+
+.hangman-wall{
+    margin-left: 95px;
+    width: 10px;
+    height: 400px;
+}
+
+.hangman-bar{
+    margin-left: 95px;
+    width: 175px;
+    height: 10px;
+}
+
+.hangman-support-bar{
+    position: absolute;
+    height: 10px;
+    width: 80px;
+    transform: rotate(-45deg);
+    left: 22%;
+    top: 7%;
+}
+
+.hangman-rope{
+    position: absolute;
+    width: 10px;
+    height: 40px;
+    right: 32%;
+}
+
+.hangman-head{
+    position: absolute;
+    right: 27%;
+    width: 50px;
+    height: 50px;
+    background-color: #ffffff;
+    border: 10px solid var(--black);
+    border-radius: 100%;
+    top: 40px;
+}
+
+.hangman-body{
+    position: absolute;
+    top: 90px;
+    width: 10px;
+    right: 32%;
+    height: 120px;
+}
+
+.hangman-arm-right,
+.hangman-arm-left,
+.hangman-leg-right,
+.hangman-leg-left{
+    position: absolute;
+    width: 10px;
+    height: 60px;
+}
+
+.hangman-arm-right,
+.hangman-arm-left{
+    top: 100px;
+}
+
+.hangman-leg-right,
+.hangman-leg-left{
+    top: 195px;
+}
+
+.hangman-arm-right{
+    right: 27%;
+    transform: rotate(-45deg);   
+}
+
+.hangman-arm-left{
+    right: 37%;
+    transform: rotate(45deg);
+}
+
+.hangman-leg-right{
+    right: 27%;
+    transform: rotate(135deg);
+}
+
+.hangman-leg-left{
+    right: 37%;
+    transform: rotate(-135deg);
+}
