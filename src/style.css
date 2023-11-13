@@ -127,8 +127,12 @@
 }
 
 .letter{
+    display: flex;
+    align-items: center;
+    justify-content: center;
     text-transform: uppercase;
     font-size: 1.875rem;
+    width: 20px;
     font-weight: 600;
     font-family: Arial;
     padding-bottom: 0.125rem;

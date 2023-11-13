@@ -1,14 +1,15 @@
-const SecretWord = () => {
-    const tempWord = "mOuse";
-    const temp = ["m", "o", "u", "e"];
+interface SecretWordPropsTypes  {
+    secretWord: string;
+    guessedLetters: string[];
+}
+
+const SecretWord = ({secretWord, guessedLetters} : SecretWordPropsTypes) => {
     return (
         <div className="secret-word__box">
             {
-                tempWord.toLocaleLowerCase().split("").map((letter, index) => (
-                    <span className="letter">
-                        <span className={temp.includes(letter) ? "letter-visible" : "letter-invisible"}
-                            key={index}
-                        >
+                secretWord.toLocaleLowerCase().split("").map((letter, index) => (
+                    <span className="letter" key={index}>
+                        <span className={guessedLetters.includes(letter) ? "letter-visible" : "letter-invisible"}>
                             {letter}
                         </span>
                     </span>
