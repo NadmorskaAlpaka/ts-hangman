@@ -178,10 +178,14 @@
 
 .correct-letter{
     opacity: 0.4;
-    background-color: rgb(14, 195, 14);
+    background-color: rgb(14, 195, 14) !important;
+    color: var(--black) !important;
+    cursor: default;
 }
 
 .incorrect-letter{
     opacity: 0.4;
-    background-color: rgb(255, 0, 0);
+    background-color: rgb(255, 0, 0) !important;
+    color: var(--black) !important;
+    cursor: default;
 }

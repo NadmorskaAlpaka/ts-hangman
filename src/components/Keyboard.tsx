@@ -14,11 +14,13 @@ const Keyboard = ({addGuessedLetters, guessedLetters, secretWord} : KeyboardProp
         addGuessedLetters(target.innerHTML);
     }
 
-    const checkLetters = (letter: string): string | void => {
+    const checkLetters = (letter: string): string => {
         if(secretWord.includes(letter) && guessedLetters.includes(letter)){
             return "correct-letter";
         } else if(!secretWord.includes(letter) && guessedLetters.includes(letter)) {
             return "incorrect-letter";
+        } else {
+            return ""
         }
     }
 
@@ -28,7 +30,8 @@ const Keyboard = ({addGuessedLetters, guessedLetters, secretWord} : KeyboardProp
                 alphabet.map((letter) => (
                     <button className={`key ${checkLetters(letter)}`} 
                             key={letter} 
-                            onClick={handleOnClick}>
+                            onClick={handleOnClick}
+                            >
                         {letter}
                     </button>
                 ))
