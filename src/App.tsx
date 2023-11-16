@@ -6,7 +6,7 @@ import Keyboard from "./components/Keyboard";
 
 function App() {
 
-  const [secretWord, setSecretWord] = useState<string>("hangman");
+  const [secretWord, setSecretWord] = useState<string>("");
   const [guessedLetters, setGuessedLetters] = useState<string[]>([]);
 
   useEffect(() => {
@@ -30,14 +30,12 @@ function App() {
   useEffect(() => {
     const handleKeyPress = (e: KeyboardEvent) => {
       const clickedKey = e.key;
-      console.log("ty")
 
       if(!clickedKey.match(/^[a-z]$/)){
         return;
       }
 
       e.preventDefault();
-      console.log("added");
       addGuessedLetters(clickedKey);
     }
 
@@ -53,7 +51,7 @@ function App() {
       {secretWord}
       <Hangman numberOfWrongGuesses={guessedLetters.filter((letter) => !secretWord.includes(letter)).length}/>
       <SecretWord secretWord={secretWord} guessedLetters={guessedLetters}/>
-      <Keyboard />
+      <Keyboard addGuessedLetters={addGuessedLetters} guessedLetters={guessedLetters} secretWord={secretWord}/>
     </div>
   )
 }

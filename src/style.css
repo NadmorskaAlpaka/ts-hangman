@@ -176,6 +176,12 @@
     color: #ffffff;
 }
 
-.inactive{
+.correct-letter{
     opacity: 0.4;
+    background-color: rgb(14, 195, 14);
+}
+
+.incorrect-letter{
+    opacity: 0.4;
+    background-color: rgb(255, 0, 0);
 }
