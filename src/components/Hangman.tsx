@@ -1,15 +1,15 @@
-import { HEAD,
-    LEFT_LEG,
-    RIGHT_LEG,
-    LEFT_ARM,
-    RIGHT_ARM,
-    BODY
-} from "../utils/bodyparts";
+import { BODYPARTS } from "../utils/bodyparts";
 
-const Hangman = () => {
+type HangmanPropsTypes = {
+    numberOfWrongGuesses: number;
+}
+
+const Hangman = ({numberOfWrongGuesses} :HangmanPropsTypes) => {
     return (
         <div className="hangman">
-            {HEAD}
+            {
+                BODYPARTS.slice(0, numberOfWrongGuesses)
+            }
             <div className="hangman-rope"></div>
             <div className="hangman-support-bar"></div>
             <div className="hangman-bar"></div>
